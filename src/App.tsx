@@ -25,6 +25,8 @@ function App() {
   const [selectedBall, setSelectedBall] = useState<TOption | null>(null);
   const orbitControls = useRef();
 
+  const debug = window.location.search.includes("debug");
+
   // get options from URL on load
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -79,7 +81,7 @@ function App() {
         <OrbitControls ref={orbitControls} target={new Vector3(0, -5, 0)} />
         <Lights />
 
-        <Physics gravity={[0, -300, 0]}>
+        <Physics gravity={[0, -300, 0]} debug={debug}>
           <Experience options={options} onSelection={onSelection} />
         </Physics>
       </Canvas>
