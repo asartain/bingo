@@ -61,6 +61,17 @@ function App() {
 
   return (
     <div className={styles.app}>
+      <a
+        href="https://github.com/asartain/bingo"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="./github-mark-white.png"
+          alt="github logo"
+          className={styles.githubLogo}
+        />
+      </a>
       <Controls balls={options} setOptions={setOptions} />
 
       {selectedBall && (
